@@ -1,73 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Carta Secreta</title>
+    <title>Carta para Daniela</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-            padding: 50px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f4e8;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
         }
-        .login-container, .letter-container {
+
+        .login-container {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             max-width: 500px;
-            margin: 0 auto;
+            margin: 50px auto;
+            text-align: center;
         }
-        input {
-            padding: 10px;
-            margin: 10px 0;
-            width: 80%;
-            border: 1px solid #ccc;
+
+        .letter-container {
+            background: #fffdf9;
+            padding: 40px;
+            max-width: 600px;
+            margin: 30px auto;
+            border: 1px solid #e0d6c2;
             border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            display: none;
         }
+
+        .letter-container::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            border: 1px solid #f0e6d2;
+            border-radius: 3px;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #8b5a2b;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .date {
+            text-align: right;
+            font-style: italic;
+            color: #8b5a2b;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            text-align: right;
+            margin-top: 40px;
+            color: #8b5a2b;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        input {
+            padding: 12px;
+            margin: 15px 0;
+            width: 70%;
+            border: 1px solid #d4c9b8;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
         button {
-            padding: 10px 20px;
-            background: #007BFF;
+            padding: 12px 25px;
+            background: #8b5a2b;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
+
         button:hover {
-            background: #0056b3;
+            background: #6d4621;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
+
         #error {
-            color: red;
+            color: #c7254e;
             margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            font-style: italic;
+            color: #8b5a2b;
+        }
+
+        .heart {
+            color: #e74c3c;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
     <div class="login-container" id="login">
         <h1>🔒 Carta Privada</h1>
-        <p>Ingresa la contraseña:</p>
+        <p>Ingresa la contraseña para leer este mensaje especial:</p>
         <input type="password" id="password" placeholder="Contraseña">
         <button onclick="checkPassword()">Acceder</button>
         <p id="error"></p>
     </div>
 
-    <div class="letter-container" id="letter" style="display: none;">
-        <h1>📜 Tu Carta Secreta</h1>
-        16th june
-Daniela Duran
+    <div class="letter-container" id="letter">
+        <div class="date">16th June</div>
+        <h1>Para Daniela Duran</h1>
+        
+        <p>Si llegaste hasta aquí, es porque al fin todo salió como lo planeé... o quizás porque el universo quiso jugar a nuestro favor una vez más.<span class="heart">*</span></p>
 
-Si llegaste hasta aquí, es porque al fin todo salió como lo planeé… o quizás porque el universo quiso jugar a nuestro favor una vez más.* 
+        <p>Quise que esta carta fuera diferente —como esto acá entre nosotros—. Y, ¿de qué manera, verdad? Una carta electrónica para una ingeniera en sistemas... bastante irónico. Que incluso sabiendo una base en "códigos" nos demoramos en descifrar esto entre nosotros. En fin, siento que <span class="highlight">no hay papel ni tinta que delaten lo que siento</span>... solo estas palabras escondidas en algún lugar del mundo, como nuestros abrazos furtivos en ese local. Un secreto que solo tú y yo conocemos, esas mañanas en las que el tiempo parece detenerse antes de que empiece un día más de trabajo.</p>
 
-Quise que esta carta fuera diferente —como esto acá entre nosotros—. Y, ¿de qué manera, verdad? Una carta electrónica para una ingeniera en sistemas… bastante irónico, Que incluso sabiendo una base en “códigos” nos demoramos en descifrar esto entre nosotros. En fin, siento que No hay papel ni tinta que delaten lo que siento… solo estas palabras escondidas en algún lugar del mundo, como nuestros abrazos furtivos en ese local, Un secreto que solo tú y yo conocemos, esas mañanas en las que el tiempo parece detenerse antes de que empiece un día más de trabajo.
+        <p>A veces pienso que somos como esas escenas de los dramas que tanto te gustan: dos almas que se cruzan en el momento equivocado, o quizás, solo quizás en el momento más oportuno de nuestras vidas. <span class="highlight">Demasiado perfecto para ignorarlo</span>. Me pregunto si, en otra vida, ya caminamos juntos bajo los cerezos de Corea, o si acaso estamos escribiendo nuestra propia historia ahora... una que nadie más entendería. Tal vez allí éramos más valientes, o tal vez esta vez —esta vida— es la que importa, porque tenemos planes que no caben en un guión:</p>
 
-A veces pienso que somos como esas escenas de los dramas que tanto te gustan: dos almas que se cruzan en el momento equivocado, o quizás, solo quizás en el momento más oportuno de nuestras vidas. demasiado perfecto para ignorarlo. Me pregunto si, en otra vida, ya caminamos juntos bajo los cerezos de Corea, o si acaso estamos escribiendo nuestra propia historia ahora… una que nadie más entendería. Tal vez allí éramos más valientes, o tal vez esta vez —esta vida— es la que importa, porque tenemos planes que no caben en un guión: 
-Un día corriendo la maratón más lenta en Francia. Hombro a hombro y un paso a la vez. Un día abriendo ese local del que tanto hablamos, sirviendo lo que a nosotros nos gusten y viendo nuestros nombres en clave en alguno de los sandwich quizás. 
- 
-Y sé que suena a sueño, pero también lo eran esas miradas que evitábamos al principio, Ahora son risas ahogadas entre esa gente, esos dulces que me ofreces aunque yo diga que no, y esa canción que tarareas y se me queda pegada el resto del día… por qué si, a veces me ves luego escuchandolas en mi tlf. pequeñas cosas que, juntas, son más grandes que todo lo demás.
+        <p>Un día corriendo la maratón más lenta en Francia. Hombro a hombro y un paso a la vez. Un día abriendo ese local del que tanto hablamos, sirviendo lo que a nosotros nos gusten y viendo nuestros nombres en clave en alguno de los sandwich quizás.</p>
 
-Tal vez algún día —cuando las hojas rosadas caigan sobre nosotros en Corea, o cuando crucemos la meta en Francia con los últimos— podamos reírnos de este juego de miradas robadas y palabras a media voz. Hasta entonces, seguiré esperando esos días entre jueves y sábado, donde por un instante, el mundo eres solo tú… y este plan secreto que, paso a paso, se vuelve realidad..
+        <p>Y sé que suena a sueño, pero también lo eran esas miradas que evitábamos al principio. Ahora son risas ahogadas entre esa gente, esos dulces que me ofreces aunque yo diga que no, y esa canción que tarareas y se me queda pegada el resto del día... por qué sí, a veces me ves luego escuchándolas en mi tlf. <span class="highlight">Pequeñas cosas que, juntas, son más grandes que todo lo demás</span>.</p>
 
-Jean Guillen.
-        <p>Este es un mensaje privado solo para ti. ¡Gracias por leerlo! ❤️</p>
+        <p>Tal vez algún día —cuando las hojas rosadas caigan sobre nosotros en Corea, o cuando crucemos la meta en Francia con los últimos— podamos reírnos de este juego de miradas robadas y palabras a media voz. Hasta entonces, seguiré esperando esos días entre jueves y sábado, donde por un instante, <span class="highlight">el mundo eres solo tú</span>... y este plan secreto que, paso a paso, se vuelve realidad.</p>
+
+        <div class="signature">Jean Guillen</div>
     </div>
 
     <script>
@@ -75,9 +153,10 @@ Jean Guillen.
             const password = document.getElementById("password").value;
             const errorElement = document.getElementById("error");
             
-            if (password === "1406") {  // Contraseña establecida: 1406
+            if (password === "1406") {
                 document.getElementById("login").style.display = "none";
                 document.getElementById("letter").style.display = "block";
+                document.body.style.background = "#f9f4e8";
             } else {
                 errorElement.textContent = "Contraseña incorrecta. Intenta de nuevo.";
             }
