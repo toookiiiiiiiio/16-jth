@@ -1,0 +1,12 @@
+function checkPassword() {
+    const password = document.getElementById("password").value;
+    const correctPassword = "1406"; // Cambia esto
+    const errorElement = document.getElementById("error");
+
+    if (password === correctPassword) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("letter").style.display = "block";
+    } else {
+        errorElement.textContent = "Contraseña incorrecta. Intenta de nuevo.";
+    }
+}
