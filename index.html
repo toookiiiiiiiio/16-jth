@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carta Secreta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container" id="login">
+        <h1>🔒 Carta Privada</h1>
+        <p>Escanea el QR e ingresa la contraseña:</p>
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="checkPassword()">Acceder</button>
+        <p id="error" style="color: red;"></p>
+    </div>
+
+    <div class="letter-container" id="letter" style="display: none;">
+        <h1>📜 Tu Carta</h1>
+        <!-- Reemplaza este texto con tu carta -->
+        <p>¡Hola! Esta es mi carta secreta. Solo tú puedes leerla. ❤️</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
