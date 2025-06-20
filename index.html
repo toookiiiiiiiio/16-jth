@@ -35,6 +35,10 @@
         button:hover {
             background: #0056b3;
         }
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -43,23 +47,27 @@
         <p>Ingresa la contraseña:</p>
         <input type="password" id="password" placeholder="Contraseña">
         <button onclick="checkPassword()">Acceder</button>
-        <p id="error" style="color: red;"></p>
+        <p id="error"></p>
     </div>
 
     <div class="letter-container" id="letter" style="display: none;">
-        <h1>📜 Tu Carta</h1>
-        <!-- ¡Reemplaza esto con tu mensaje! -->
-        <p>Este es el contenido secreto que solo tú puedes leer...</p>
+        <h1>📜 Tu Carta Secreta</h1>
+        <!-- ¡Reemplaza este texto con tu mensaje personalizado! -->
+        <p>Este es un mensaje privado solo para ti. ¡Gracias por leerlo! ❤️</p>
     </div>
 
     <script>
         function checkPassword() {
             const password = document.getElementById("password").value;
-            const correctPassword = "1606"; // ¡Cambia esto!
             const errorElement = document.getElementById("error");
-
-            if (password === correctPassword) {
+            
+            if (password === "1406") {  // Contraseña establecida: 1406
                 document.getElementById("login").style.display = "none";
                 document.getElementById("letter").style.display = "block";
             } else {
                 errorElement.textContent = "Contraseña incorrecta. Intenta de nuevo.";
+            }
+        }
+    </script>
+</body>
+</html>
